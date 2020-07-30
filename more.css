@@ -1,0 +1,49 @@
+.background{
+    background-image: linear-gradient(to right,#cf16d2,#450da9);
+    width: 100%;
+    height: 100%;
+}
+.table_box {
+    width: 480px;
+    margin: auto;
+    height: 650px;
+   background-color: inherit;  
+}
+.next{
+    font-size: 50px;
+    background-color:inherit;
+    color: white;
+    text-decoration: none;
+    
+}
+.next:hover{
+    color: black;
+}
+h2 {
+    color: aqua;
+    font-size: 50px;
+    text-align: center;
+}
+button{
+    height: 450px;
+    width: 156px;
+    background-color: inherit;
+    border-bottom:  5px solid  black;
+    border-right: 5px solid black;
+    border-top: 5px solid black;
+    border-left: 5px solid black;
+}
+.bmi, .perc, .temp{
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 900;
+    color: black;
+}
+.bmi:hover, .perc:hover, .temp:hover{
+    color: red;
+}
+img{
+    height: 200px;
+    width:  100px;
+    
+}

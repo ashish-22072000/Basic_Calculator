@@ -1,0 +1,54 @@
+.background{
+    background-image: linear-gradient(to right,#cf16d2,#450da9);
+    width: 100%;
+    height: 100%;
+}
+.table_box {
+    width: 480px;
+    margin: auto;
+    height: 620px;
+   background-color: inherit;  
+}
+h2 {
+    color: aqua;
+    font-size: 50px;
+    text-align: center;
+}
+.next{
+    font-size: 50px;
+    background-color:inherit;
+    color: white;
+    text-decoration: none;
+    
+}
+.next:hover{
+    color: black;
+}
+p{
+    text-align: center;
+    font-size: 50px;
+}
+input{
+    height: 50px;
+    width: 150px;
+    font-size: 50px;
+    color: orangered;
+}
+input[type=button]{
+    color: white;
+    background-color: black;
+    font-size: 40px;
+    border: 1px solid black;
+    margin-left: 200px;
+    font-weight: 900;
+    text-align: center;
+    height: 60px;
+}
+input[type=button]:hover{
+    background-color: red;
+}
+#result{
+    color: black;
+        font-family: cursive;
+    font-weight: 900;
+}
