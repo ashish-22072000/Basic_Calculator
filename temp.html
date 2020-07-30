@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="temp.css">
+    <script>
+    function temp(){
+        var temperature = Number(document.getElementById("temperature").value);
+        var InpTempUnit = document.getElementById("InpTempUnit").value;
+        var tempunit = document.getElementById("tempunit").value;
+        if(InpTempUnit == "C" && tempunit == "F"){
+            var result = (temperature*(9/5))+32;
+            document.getElementById("result").innerHTML = result + "<sup>0</sup>F";
+        }
+        else if(InpTempUnit == "C" && tempunit == "K"){
+            var result = temperature +273.15;
+            document.getElementById("result").innerHTML = result + "<sup>0</sup>K";
+        }
+        else if(InpTempUnit == "C" && tempunit == "C"){
+            var result = temperature;
+            document.getElementById("result").innerHTML = result + "<sup>0</sup>C";
+        }
+        else if(InpTempUnit == "F" && tempunit == "C"){
+            var result = (temperature-32)*(5/9);
+            document.getElementById("result").innerHTML = result + "<sup>0</sup>C";
+        }
+        else if(InpTempUnit == "F" && tempunit == "K"){
+            var result = (temperature-32)*(5/9)+273.15;
+            document.getElementById("result").innerHTML = result + "<sup>0</sup>K";
+        }
+        else if(InpTempUnit == "F" && tempunit == "F"){
+            var result = temperature;
+            document.getElementById("result").innerHTML = result + "<sup>0</sup>F";
+        }
+        else if(InpTempUnit == "K" && tempunit == "C"){
+            var result = temperature-273.15;
+            document.getElementById("result").innerHTML = result + "<sup>0</sup>C";
+        }
+        else if(InpTempUnit == "K" && tempunit == "F"){
+            var result = (temperature-273.15)*(9/5)+32;
+            document.getElementById("result").innerHTML = result + "<sup>0</sup>K";
+        }
+        else{
+            var result = temperature;
+            document.getElementById("result").innerHTML = result + "<sup>0</sup>K";
+        }
+        if(tempunit == "C"){
+            if(result<=0 && result<10){
+                document.getElementById("message").innerHTML = "Freezing Temperature";
+                document.getElementById("message").style.color = "white";
+            }
+            else if(result>=10 && result<20){
+                document.getElementById("message").innerHTML = "Cold Temperature";
+                document.getElementById("message").style.color = "skyblue";
+            }
+            else if(result>=20 && result<30){
+                    document.getElementById("message").innerHTML = "Room Temperature";
+                document.getElementById("message").style.color = "black";
+            }
+            else {
+                    document.getElementById("message").innerHTML = "Hot Temperature";
+                document.getElementById("message").style.color = "red";
+            }
+        }
+        else if(tempunit == "K"){
+            if(result<=273){
+                    document.getElementById("message").innerHTML = "Freeze Temperature";
+                document.getElementById("message").style.color = "white";
+            }
+            else if(result>273 && result<= 283){
+                    document.getElementById("message").innerHTML = "Cold Temperature";
+                document.getElementById("message").style.color = "skyblue";
+            }
+            else if(result>283 && result<=293){
+                    document.getElementById("message").innerHTML = "Room Temperature";
+                document.getElementById("message").style.color = "black";
+            }
+            else{
+                    document.getElementById("message").innerHTML = "Hot Temperature";
+                document.getElementById("message").style.color = "red";
+            }
+            }
+        else if(tempunit == "F"){
+            if(result<=32){
+                document.getElementById("message").innerHTML = "Freeze Temperature";
+                document.getElementById("message").style.color = "white";
+            }
+            else if(result>32 && result<=50){
+                document.getElementById("message").innerHTML = "Cold Temperature";
+                document.getElementById("message").style.color = "skyblue";
+            }
+            else if(result>50 && result<=68){
+                document.getElementById("message").innerHTML = "Room Temperature";
+                document.getElementById("message").style.color = "black";
+                
+            }
+            else{
+                document.getElementById("message").innerHTML = "Hot Temperature";
+                document.getElementById("message").style.color = "red";
+            }
+        }
+        }
+    </script>
+    </head>
+<body>
+        <div class="background" id="body" >
+        <div class="table_box" >
+            <h2>Temperature(<sup>0</sup>)</h2>
+              <a href="more.html" class="next">&laquo;</a>
+            <h2 id="message"></h2>
+            <div class="input">
+            <p>Temperature:
+                <input id="temperature" placeholder="0">
+                <select id="InpTempUnit" type="multiple">
+                <option value="C" selected="selected">Celcius</option>
+                <option value="F" selected="selected">Fahrenheit</option>
+                <option value="K" selected="selected">Kelvin</option>
+                </select>
+                </p>
+                <p>To: 
+                <select id="tempunit" type="multiple">
+                   <option value="C" selected="selected">Celcius</option>
+                <option value="F" selected="selected">Fahrenheit</option>
+                <option value="K" selected="selected">Kelvin</option>  
+                    
+                    </select>
+                </p>
+                <p class="change" id="result"></p>
+                <input type="button" value="Solve" onclick="temp()">
+            </div>
+            </div>
+    </div>
+    </body>
+</html>

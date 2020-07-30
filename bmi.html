@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="bmi.css">
+    <script>
+        function   bmi(){
+            var height = Number(document.getElementById("height").value) ;
+            var weight = Number(document.getElementById("weight").value) ;
+            var heightunits = document.getElementById("heightUnits").value;
+            var weightunits = document.getElementById("weightUnits").value;
+        if(heightunits == "cm" && weightunits == "kg"){
+            var result = Math.round(weight/Math.pow(height,2)*10000);
+            document.getElementById("result").innerHTML = "=" + result;
+        }
+        else if(heightunits == "cm" && weightunits == "lb"){
+            var w = weight*0.454;
+                var result = Math.round(w/Math.pow(height,2)*10000);
+                document.getElementById("result").innerHTML = "=" + result;
+           }
+            else if(heightunits == "m"  && weightunits == "kg"){
+                var result = weight/Math.pow(height,2);
+                document.getElementById("result").innerHTML = "=" + result;
+            }
+            else if(heightunits == "m" && weightunits == "lb"){
+                var w = weight*0.454;
+                var result = w/Math.pow(height,2);
+                document.getElementById("result").innerHTML = "=" + result;
+            }
+            var x = document.getElementById("result").innerText;
+            if(x<18.5){
+                document.getElementById("message").innerHTML = "underWeight";
+             document.getElementById("message").style.color="blue";
+            }
+            else if(x>=18.5 && x<=25){
+                document.getElementById("message").innerHTML = "normal";
+                  document.getElementById("message").style.color="green";
+            }
+            else if(x>=25 && x<=30){
+                document.getElementById("message").innerHTML = "Obese";
+                  document.getElementById("message").style.color="red";
+            }
+            else{
+                document.getElementById("message").innerHTML = "OverWeight";
+                  document.getElementById("message").style.color="darkred";
+            }
+        }
+        
+    </script>
+    </head>
+    <body >
+    <div class="background" id="body" >
+        <div class="table_box" >
+            <h2><b>Body Mass Index</b></h2>
+             <a href="more.html" class="next">&laquo;</a>
+            <div class="input">
+                <h2 id="message"></h2>
+            <p>Weigth:
+            <input id="weight" placeholder="0" >
+            <select type="multiple" id="weightUnits">
+                <option value="kg" selected="selected" >KiloGram</option>
+                <option value="lb" selected="selected">Pound</option>
+                </select></p>
+                <p>Height:
+                 <input id="height" placeholder="0" >
+            <select type="multiple" id="heightUnits">
+                <option value="m" selected="selected">Meter</option>
+                <option value="cm" selected="selected">CentiMeter</option>
+                </select>
+                </p>
+                <p class="change" id="result"> 
+                </p>
+                <input type="button" value="Solve" onclick="bmi()">
+            </div>
+        </div>
+        </div>

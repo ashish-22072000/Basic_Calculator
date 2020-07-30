@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="percentage.css">
+    <script>
+        function perc(){
+    var p = document.getElementById("percentage").value;
+    var t = document.getElementById("total").value;
+    var result = (p/100)*t;
+            document.getElementById("result").innerHTML = "=" + result + "%";
+    }
+    </script>
+    </head>
+</html>
+<div class="background">
+        <div class="table_box">
+            <h2><b>Percentage %</b></h2>
+            <a href="more.html" class="next">&laquo;</a>
+            <div id="inter">
+            <p> Enter %:  
+                <input id="percentage"></p>
+            <p>Total: 
+                <input id="total">
+                </p>
+                <h2 id="result"></h2>
+                <input type="button" value="solve" onclick="perc()">
+            </div>
+    </div>
+</div>
